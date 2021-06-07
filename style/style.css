@@ -200,7 +200,7 @@ Course Card Section
   background: var(--white);
   width: 380px;
   min-height: 350px;
-  margin-left: 2em;
+  /* margin-left: 2em; */
   margin-bottom: 3em;
   border-radius: 8px;
   line-height: 20px;
