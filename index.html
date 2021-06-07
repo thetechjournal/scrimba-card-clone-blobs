@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Blobs</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1 class="site-title">Blobbing with Scrimba!</h1>
+        </div>
+        <div class="blob1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#E1F1F3" d="M44.4,-63.2C57.5,-51.6,68,-38.6,73.1,-23.6C78.1,-8.7,77.7,8.2,72.8,23.8C68,39.5,58.8,53.9,45.9,65.2C33.1,76.5,16.5,84.8,1.7,82.4C-13.2,80.1,-26.4,67.3,-40.2,56.3C-54,45.3,-68.5,36.1,-77.1,22.1C-85.7,8.1,-88.4,-10.7,-83.9,-28C-79.3,-45.2,-67.4,-60.8,-52.2,-71.8C-37,-82.7,-18.5,-88.9,-1.4,-86.9C15.7,-84.9,31.3,-74.8,44.4,-63.2Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        <div class="blob2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#E1F1F3" d="M63.5,-36.9C73.7,-19.1,67.2,8,53.9,30.1C40.5,52.1,20.3,69.2,-3.8,71.4C-27.9,73.6,-55.8,61,-67,40.1C-78.2,19.3,-72.7,-9.7,-58.7,-29.8C-44.8,-49.8,-22.4,-60.7,2.1,-62C26.7,-63.2,53.4,-54.7,63.5,-36.9Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        <div class="blob3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#E1F1F3" d="M34.4,-32.1C49.1,-19.8,68.6,-9.9,72.7,4.1C76.9,18.2,65.7,36.3,51,45.1C36.3,53.8,18.2,53.2,-0.8,54C-19.8,54.8,-39.6,57.2,-54.2,48.4C-68.8,39.6,-78.1,19.8,-77.1,0.9C-76.2,-17.9,-65,-35.9,-50.4,-48.2C-35.9,-60.5,-17.9,-67.1,-4,-63.1C9.9,-59.1,19.8,-44.4,34.4,-32.1Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="blob-generator">
+                <fieldset>
+                    <legend>Floating Blobs:</legend>
+                    <div class="legend-section-desc"><h4>Select color for floating blobs: </h4></div>
+                    <div class="color-panel-float">
+                        <div>
+                            <span class="legend-label">Random: <a id="btn-random"><br><img class="cube" src="images/cube.svg"></a></span>
+                            <label for="favcolor">Favourite:</label><br><br>
+                            <input type="color" id="favcolor" name="favcolor" value="#194688">
+                        </div>
+                        <div class="blob-float">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#24A148" d="M39.6,-39.4C50.7,-28.5,58.8,-14.2,56.4,-2.3C54.1,9.6,41.4,19.2,30.3,32.2C19.2,45.3,9.6,61.8,-0.7,62.5C-11,63.2,-22.1,48.2,-38.4,35.1C-54.7,22.1,-76.3,11,-76,0.3C-75.7,-10.5,-53.5,-20.9,-37.2,-31.8C-20.9,-42.7,-10.5,-54.1,1.9,-56C14.2,-57.9,28.5,-50.3,39.6,-39.4Z" transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                    </div>
+                </fieldset>  
+                <fieldset>
+                    <legend>Course Card Blobs:</legend>
+                    <div class="legend-section-desc"><h4>Select color & style for course blobs: </h4></div>
+                    <div class="color-panel-float">
+                        <div>
+                            <span class="legend-label">Random: <a id="btn-random-card"><br><img class="cube" src="images/cube.svg"></a></span>
+                            <label for="cardblob">Favourite:</label><br><br>
+                            <input class="cardblob" type="color" id="cardblob" name="cardblob" value="#194688">
+                        </div>
+                        <div class="card-blob-sample"></div>
+                    </div>
+                    <div class="range-container">
+                        <input type="range" id="radius1" min="0" max="100" step="1" value="70" data-value="70%">
+                        <input type="range" id="radius2" min="0" max="100" step="1" value="30" data-value="30%">
+                        <input type="range" id="radius3" min="0" max="100" step="1" value="30" data-value="30%">
+                        <input type="range" id="radius4" min="0" max="100" step="1" value="70" data-value="70%">
+                        <input type="range" id="radius5" min="0" max="100" step="1" value="60" data-value="60%">
+                        <input type="range" id="radius6" min="0" max="100" step="1" value="40" data-value="40%">
+                        <input type="range" id="radius7" min="0" max="100" step="1" value="60" data-value="60%">
+                        <input type="range" id="radius8" min="0" max="100" step="1" value="40" data-value="40%">
+                        <div class="code"></div>
+                    </div>
+                </fieldset> 
+            </div>
+            <div class="tiles">
+                <div>
+                    <div class="card course-container">
+                        <a href="#">
+                            <div class="course-title">
+                                <h2>Become CSS Ninja</h2>
+                                <div class="blobs">
+                                    <div class="card-blob-1 card-blob"></div>
+                                    <div class="card-blob-2 card-blob"></div>
+                                    <div class="card-blob-3 card-blob"></div>
+                                </div>
+                            </div>
+                            <div class="course-detail">
+                                <div class="course-info">
+                                    <div>
+                                        <span>42 lessons | 3 hours</span>
+                                        <span>with <sapn class="name-instructor">Kevin Powell</sapn></span>
+                                    </div>
+                                    <div>
+                                        <img class="instructor-img" src="./images/kevin.jpeg"/>
+                                    </div>
+                                </div>
+                                <div class="status">   
+                                    <div class="course-level">Intermediate</div>
+                                    <div class="course-level">Enrolled</div>
+                                </div>
+                               
+                            </div>
+                        </a>   
+                    </div>
+                    <div class="card course-container">
+                        <a href="#">
+                            <div class="course-title">
+                                <h2>Github Mastery</h2>
+                                <div class="blobs">
+                                    <div class="card-blob-1 card-blob"></div>
+                                    <div class="card-blob-2 card-blob"></div>
+                                </div>
+                            </div>
+                            <div class="course-detail">
+                                <div class="course-info">
+                                    <div>
+                                        <span>31 lessons | 4 hours</span>
+                                        <span>with <sapn class="name-instructor">Michael Rybintsev</sapn></span>
+                                    </div>
+                                    <div>
+                                        <img class="instructor-img" src="./images/michael.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="status">   
+                                    <div class="course-level">Intermediate</div>
+                                    <div class="course-level">Enrolled</div>
+                                </div>
+                               
+                            </div>
+                        </a>   
+                    </div>
+                </div>
+                <div>
+                    <div class="card course-container">
+                        <a href="#">
+                            <div class="course-title">
+                                <h2>Coding for Cats</h2>
+                                <div class="blobs">
+                                    <div class="card-blob-1 card-blob"></div>
+                                    <div class="card-blob-2 card-blob"></div>
+                                    <div class="card-blob-3 card-blob"></div>
+                                </div>
+                            </div>
+                            <div class="course-detail">
+                                <div class="course-info">
+                                    <div>
+                                        <span>4 lessons | 1 hours</span>
+                                        <span>with <sapn class="name-instructor">Pumpkin</sapn></span>
+                                    </div>
+                                    <div>
+                                        <img class="instructor-img cat-img" src="./images/cat.png"/>
+                                    </div>
+                                </div>
+                                <div class="status">   
+                                    <div class="course-level">Intermediate</div>
+                                    <div class="course-level">Enrolled</div>
+                                </div>
+                               
+                            </div>
+                        </a>   
+                    </div>
+                    <div class="card course-container">
+                        <a href="#">
+                            <div class="course-title">
+                                <h2>CSS & HTML Fun</h2>
+                                <div class="blobs">
+                                    <div class="card-blob-1 card-blob"></div>
+                                    <div class="card-blob-3 card-blob"></div>
+                                </div>
+                            </div>
+                            <div class="course-detail">
+                                <div class="course-info">
+                                    <div>
+                                        <span>128 lessons | 12 hours</span>
+                                        <span>with <sapn class="name-instructor">Leanne Rybintsev</sapn></span>
+                                    </div>
+                                    <div>
+                                        <img class="instructor-img" src="./images/leanne.png"/>
+                                    </div>
+                                </div>
+                                <div class="status">   
+                                    <div class="course-level">Intermediate</div>
+                                    <div class="course-level">Enrolled</div>
+                                </div>
+                               
+                            </div>
+                        </a>   
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
+

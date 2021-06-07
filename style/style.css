@@ -1,0 +1,364 @@
+/*
+DESCRIPTION:
+
+Your challenge is clone a course card from Scrimba's homepage.
+
+For the layout, you can go grid or flex.
+
+Some extra things to look into:
+ - logical properties for margin and padding
+ - the new color syntax (for RGB and HSL)
+ 
+ Stretch goals: 
+  - Add those fun bubble animations!
+  - Create a set of cards where the colors (and other things?) are updated through the use of custom properties
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /* Border Radius Values */
+  --radius-1: 70%;
+  --radius-2: 30%;
+  --radius-3: 30%;
+  --radius-4: 70%;
+  --radius-5: 60%;
+  --radius-6: 40%;
+  --radius-7: 60%;
+  --radius-8: 40%;
+
+  /* Colors */
+  --light-blue: #EBF1FF; 
+  --dark-blue: #194688;
+  --light-yellow: #FFFAD1;
+  --white: white;
+  --black: black;
+  --seashell: seashell;
+}
+
+body {
+  background-color: var(--light-blue);
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 1.9rem;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  position: relative;
+}
+
+.site-title{
+  margin: 20px;
+  background: var(--light-yellow);
+  padding: 12px;
+  color: var(--dark-blue);
+  border-radius: 10% 100% 10% 20% / 66% 40% 60% 35%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-blue);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/****************
+Blob Setting Tool
+****************/
+
+.blob-generator {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 6px rgb(0 0 0 / 15%);
+  background: var(--white);
+  border-radius: 5px;
+  width: 380px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin: 1em;
+  padding: 1em;
+  padding-top: 0;
+  color: var(--dark-blue);
+}
+
+.color-panel-float {
+  display: flex;
+  flex-direction: row;
+}
+
+.blob-float {
+  width: 200px;
+}
+
+legend {
+  margin: 1em;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  background: var(--light-yellow);
+  padding: 20px;
+  border-radius: 10% 100% 10% 20% / 66% 40% 60% 35%;
+}
+
+.legend-section-desc {
+  padding-bottom: 2em;;
+}
+
+.legend-section-style-desc {
+  padding-top: 2em;
+}
+
+.legend-label {
+  padding-bottom: 2em;;
+}
+
+.cube {
+  width: 2.5em;
+  padding-top: 1em;
+}
+
+.card-blob-sample {
+  background: rgb(244, 230, 230);
+  height: 180px;
+  width: 150px;
+  margin-left: 30px;
+  z-index: 1;
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+}
+
+.range-container {
+  padding-top: 2em;
+}
+
+input[type="range"] { 
+  width: 100%; 
+  margin: 10px 0;  
+}
+
+input[type="range"]:before {
+  content: attr(data-value);
+  background: var(--dark-blue);
+  color: var(--white);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+  text-align: center;
+  font: normal 1em/40px sans-serif;
+  margin-right: 5px;
+  box-shadow: 5px 0 0 0 var(--white);
+}
+
+.code{
+  margin-top: 20px;
+  background: var(--light-yellow);
+  padding: 10px;
+  color: var(--dark-blue);
+  border-radius: 100% 100% 30% 70% / 66% 40% 60% 35%;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/******************
+Course Card Section
+******************/
+
+.tiles {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  background: var(--white);
+  width: 380px;
+  min-height: 350px;
+  margin-left: 2em;
+  margin-bottom: 3em;
+  border-radius: 8px;
+  line-height: 20px;
+  box-shadow: 0 6px 6px rgb(0 0 0 / 5%);
+}
+
+.course-title {
+  display: flex;
+  min-height: 240px;
+  color: var(--dark-blue);
+  background-color: var(--seashell);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0px 2px 0px hsl(0deg 0% 100% / 70%);
+}
+
+span {
+  display: block;
+}
+
+.course-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  background: #ffffff;
+  
+}
+
+.course-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--black);
+}
+
+.name-instructor {
+  font-weight: bold;
+}
+
+.instructor-img {
+  border-radius: 50px;
+}
+
+.course-level {
+  margin: 1em;
+  padding-top: 4em;;
+  align-items: bottom;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*************
+Floating Blobs
+**************/
+
+.blob1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30vmax;
+  z-index: -1;
+  animation: move 15s ease-in-out infinite;
+}
+
+.blob2 {
+  position: absolute;
+  top: 0px;
+  right: 30px;  
+  width: 15vmax;
+  z-index: -1;
+  animation: move 15s ease-in-out infinite;
+}
+
+.blob3 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;  
+  width: 35vmax;
+  z-index: -1;
+  animation: move 30s ease-in-out infinite;
+}
+
+/* Floating Blobs Animation */
+@keyframes move {
+  0%   { transform: scale(1)   translate(10px, -30px); }
+  38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+  40%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+  78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+  80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+  100% { transform: scale(1)   translate(10px, -30px); }
+} 
+
+/****************
+Course Card Blobs
+****************/
+
+.card-blob-1 {
+  position: absolute;
+  background: rgb(247, 221, 221);
+  height: 130px;
+  width: 150px;
+  top: 30px;
+  right: 25px;
+  z-index: 1;
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+}
+
+.card-blob-2 {
+  position: absolute;
+  background: rgb(244, 230, 230);
+  height: 180px;
+  width: 150px;
+  top: 30px;
+  left: 45px;
+  z-index: 1;
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+}
+
+.card-blob-3 {
+  position: absolute;
+  background: rgb(225, 241, 243);
+  height: 100px;
+  width: 130px;
+  bottom: 0px;
+  right: 100px;
+  z-index: 1;
+  border-radius: var(--radius-1) var(--radius-2) var(--radius-3) var(--radius-4) / var(--radius-5) var(--radius-6) var(--radius-7) var(--radius-8);
+}
+
+.course-title:hover .card-blob {
+  transform: rotate(10deg) translateY(-70px) scale(1.4);
+  transition: transform 0.2s ease-in-out;
+}
+
+/************
+Media Queries
+************/
+
+/* @media (max-width: 1200px) {
+  header {
+      text-align: left;
+  }
+  .container {
+      flex-direction: column;
+  }
+
+  .tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+} */
+
+
+
+
