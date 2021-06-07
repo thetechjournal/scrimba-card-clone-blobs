@@ -3,6 +3,9 @@
 ## Published Version:
 * https://thetechjournal.github.io/scrimba-card-clone-blobs/
 
+## Github URL:
+* https://github.com/thetechjournal/scrimba-card-clone-blobs 
+
 ## Scrim URL:
 * https://scrimba.com/scrim/co7734024b32f62c690dc2c0a
 

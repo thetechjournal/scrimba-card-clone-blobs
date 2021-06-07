@@ -144,6 +144,17 @@ legend {
   padding-top: 1em;
 }
 
+.cube-animation {
+  -webkit-animation:spin 0.5s linear 1;
+  -moz-animation:spin 0.5s linear 1;
+  animation:spin 0.5s linear 1;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
 .card-blob-sample {
   background: rgb(244, 230, 230);
   height: 180px;
@@ -200,7 +211,7 @@ Course Card Section
   background: var(--white);
   width: 380px;
   min-height: 350px;
-  /* margin-left: 2em; */
+  margin-left: 2em;
   margin-bottom: 3em;
   border-radius: 8px;
   line-height: 20px;

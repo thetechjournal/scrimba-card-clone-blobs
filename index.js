@@ -3,6 +3,8 @@ const randomColor = document.getElementById('btn-random');
 const randomColorCard = document.getElementById('btn-random-card');
 const favColor = document.getElementById('favcolor');
 const favColorCardBlob = document.getElementById('cardblob');
+const cube1 = document.querySelector("#img-cube-1");
+const cube2 = document.querySelector("#img-cube-2");
 
 // Course Card Blobs Variables
 const cardBlobs = document.querySelectorAll('.card-blob');
@@ -33,6 +35,11 @@ favColor.addEventListener('input', (e) => {
 
 // Randomly apply colors to the SVG fill property of floating blobs using settings tool
 randomColor.addEventListener('click', (e) => {
+  cube1.classList.add('cube-animation');
+  setTimeout(() => {
+    cube1.classList.remove('cube-animation');
+  }, 600);
+  
   blobs.forEach(blob => {
     blob.style.fill = colors[Math.floor(Math.random() * colors.length)];
   });
@@ -47,6 +54,10 @@ favColorCardBlob.addEventListener('input', (e) => {
 })
 
 randomColorCard.addEventListener('click', (e) => {
+  cube2.classList.add('cube-animation');
+  setTimeout(() => {
+    cube2.classList.remove('cube-animation');
+  }, 600);
   generateRandomStyle(blob1);
   generateRandomStyle(blob2);
   generateRandomStyle(blob3);
