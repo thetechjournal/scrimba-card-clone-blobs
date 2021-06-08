@@ -74,22 +74,16 @@ const generateRandomStyle = (blob, noOfBlobs='many') => {
   }
 }
 
-const randomizer = (blb) => {
+const randomizer = (blob) => {
   // Generate randon number between two numbers
   // Math.floor(Math.random() * (max - min + 1)) + min;
 
   const width = Math.floor(Math.random() * (150 - 110 + 1) + 110);
   const height = Math.floor(Math.random() * (180 - 110 + 1) + 110);
-  
-  const percentage1 = Math.floor(Math.random() * (100 - 40 + 1) + 40);
-  const percentage2 = Math.floor(Math.random() * (100 - 40 + 1) + 40);
-  const percentage3 = Math.floor(Math.random() * (100 - 40 + 1) + 40);
-  const percentage4 = Math.floor(Math.random() * (100 - 40 + 1) + 40);
 
-  blb.style.background = colors[Math.floor(Math.random() * colors.length)];
-      blb.style.borderRadius = `${percentage1}% ${percentage2}% ${percentage3}% ${percentage4}% / ${percentage1}% ${percentage3}% ${percentage2}% ${percentage4}%`;
-      blb.style.width = `${width}px`;
-      blb.style.height = `${height}px`;
+  blob.style.background = colors[Math.floor(Math.random() * colors.length)];
+  blob.style.width = `${width}px`;
+  blob.style.height = `${height}px`;
 }
 
 // Blob Settings Tool
